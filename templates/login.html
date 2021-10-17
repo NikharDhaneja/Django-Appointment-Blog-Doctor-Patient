@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+
+<!--Login-->
+<div class="container py-5">
+
+    <div >
+
+        {% if login_form.non_field_errors %}
+            {% for error in login_form.non_field_errors %}
+            <div class="alert alert-danger">
+                 <strong>{{ error|escape }}</strong>
+            </div>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+
+      <h1>Login</h1>
+      <form method="POST">
+        {% csrf_token %}
+        <!-- {{ login_form|crispy }} -->
+        {% for field in login_form %}
+        <div class="fieldWrapper">
+            {# uncomment to display field errors #}
+            {# {{ field.errors }} #}
+
+            {{ field|as_crispy_field }}
+        </div>
+        {% endfor %}
+        <br>
+        <button class="btn btn-primary" type="submit">Login</button>
+      </form>
+      <p class="text-center">Don't have an account? <a href="/registration">Create an account</a>.</p>
+</div>
+
+{% endblock %}

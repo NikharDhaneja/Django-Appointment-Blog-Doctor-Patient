@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+	
+<div class="container py-5">
+
+	{% if user.is_doctor %}
+	  <h1>Doctor Dashboard</h1>
+	{% endif %}
+
+	{% if user.is_patient %}
+	  <h1>Patient Dashboard</h1>
+	{% endif %}
+
+		<h2 style="color:MediumSeaGreen">User Info</h2>
+		{% if user.profile_pic %}
+		  <img src="{% static user.profile_pic.url %}" alt="profile" style="max-height:150px; max-width:150px;">
+		{% endif %}
+
+		{% if user_info.first_name %}
+			<h4> FirstName :
+				<span style="color:#990099">
+					{{user_info.first_name}}
+				</span>
+			</h4>
+		{% endif %}
+
+		{% if user_info.last_name %}
+			<h4> LastName :
+				<span style="color:#990099">
+					{{user_info.last_name}}
+				</span>
+			</h4>
+
+		{% endif %}
+
+		{% if user_info.username  %}
+			<h4> Username :
+				<span style="color:#990099">
+					{{user_info.username}}
+				</span>
+			</h4>
+		{% endif %}
+
+		{% if user_info.email %}
+			<h4> Email :
+				<span style="color:#990099">
+					{{user_info.email}}
+				</span>
+			</h4>
+		{% endif %}
+
+		{% if user_info.address.line1 %}
+		<h2 style="color:MediumSeaGreen">address</h2>
+			<h4> Line1 :
+				<span style="color:#990099">
+					{{user_info.address.line1}}
+				</span>
+			</h4>
+		{% endif %}
+
+		{% if user_info.address.city %}
+			<h4> City :
+				<span style="color:#990099">
+					{{user_info.address.city}}
+				</span>
+			</h4>
+		{% endif %}
+
+		{% if user_info.address.state %}
+			<h4> State :
+				<span style="color:#990099">
+					{{user_info.address.state}}
+				</span>
+			</h4>
+		{% endif %}
+
+		{% if user_info.address.pincode %}
+			<h4> Pincode :
+				<span style="color:#990099">
+					{{user_info.address.pincode}}
+				</span>
+			</h4>
+		{% endif %}
+
+</div>
+
+{% endblock %}
