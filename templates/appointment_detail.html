@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container py-5">
+
+            <h3>Doctor Name</h3>{{appointment.doctor.first_name}}&nbsp;{{appointment.doctor.last_name}}<br><br>
+        <h3>Date</h3>{{appointment.date}}<br><br>
+        <h3>Time</h3>{{appointment.get_time_slot_display}}<br><br>
+
+</div>
+
+{% endblock %}

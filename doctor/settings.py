@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'crispy_forms',
     'blog.apps.BlogConfig',
+    'appointment.apps.AppointmentConfig',
 ]
 
 MIDDLEWARE = [

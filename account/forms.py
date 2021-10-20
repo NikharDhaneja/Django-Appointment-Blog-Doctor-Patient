@@ -12,6 +12,10 @@ class RegistrationForm(UserCreationForm):
         model = User
         fields = [ "role", "first_name", "last_name", "username", "email", "profile_pic",]
 
+    def __init__(self, *args, **kwargs):
+        super(RegistrationForm, self).__init__(*args, **kwargs)
+        self.fields['first_name'] = forms.CharField(required=True)
+        self.fields['last_name'] = forms.CharField(required=True)
 
 class AddressForm(forms.ModelForm):
     class Meta:
