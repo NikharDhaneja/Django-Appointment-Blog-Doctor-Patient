@@ -1,4 +1,4 @@
-# Django-Appointment-Blog-Doctor-Patient-
+# Django-Appointment-Blog-Doctor-Patient
 
 Visit below video links to project <br />
   task 1 - [Registration and login](https://drive.google.com/file/d/1_XVncwL_hpcJA9s6-IavMOES2DOfgTKr/view?usp=sharing) <br />
